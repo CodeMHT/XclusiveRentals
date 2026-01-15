@@ -37,7 +37,7 @@ app.use("/make", makeRoute)
 
 client.connect((err, result) => {
     if (err) {
-        console.log("Database Error: " + err)
+        console.log("Database " + err)
     }
 })
 
