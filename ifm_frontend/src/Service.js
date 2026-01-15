@@ -15,7 +15,7 @@ const Service = () => {
     useEffect(() => {
 
         //Get user info
-        axios.get(`https://two024uj.onrender.com/user/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => setUser(res.data))
 
         //Get Vehicles
@@ -24,7 +24,7 @@ const Service = () => {
 
     //Gets vehicles being serviced
     const GetServiceCars = () => {
-        axios.get("https://two024uj.onrender.com/service")
+        axios.get("https://xclusive-service.onrender.com/service")
             .then(res => {
 
                 if (res.data[0].status === "None" || res.data === "Error in server") {
@@ -181,7 +181,7 @@ const Service = () => {
                                 return (
                                     <div className="col-12 col-md-4 col-lg-3 mb-5" style={{ paddingRight: 20 }} key={index}>
                                         <div style={{ width: 250, height: 350, marginTop: -20 }}>
-                                            <img src={`https://two024uj.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
+                                            <img src={`https://xclusive-service.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
                                             <center><p style={{ color: "#163a7c", fontWeight: "bold" }}>{car.vehicle_year}</p></center>
                                             <center><h3 style={{ color: "#163a7c", fontWeight: "bold" }} className="product-title">{car.vehicle_make + " " + car.vehicle_model}</h3></center>
                                             <center><h4 style={{ color: "#163a7c", fontWeight: "bold" }}>{"Interval: " + car.service_interval}</h4></center>

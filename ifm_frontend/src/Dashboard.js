@@ -100,7 +100,7 @@ const Dashboard = () => {
 
     //get info about user
     const GetUser = () => {
-        axios.get(`https://two024uj.onrender.com/user/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => {
                 setUser(res.data)
             })
@@ -108,7 +108,7 @@ const Dashboard = () => {
 
     //Get Todays Rentals
     const TodaysRentals = () => {
-        axios.get("https://two024uj.onrender.com/reports/today")
+        axios.get("https://xclusive-service.onrender.com/reports/today")
             .then(res => {
                 if (res.data !== "Error in server") {
                     setTodaysRentals(res.data)
@@ -119,7 +119,7 @@ const Dashboard = () => {
 
     //Get This months revenue
     const MonthlyRevenue = () => {
-        axios.get("https://two024uj.onrender.com/reports/month")
+        axios.get("https://xclusive-service.onrender.com/reports/month")
             .then(res => {
                 if (res.data !== "Error in server" || res.data.month !== 0) {
                     setRevenue(res.data)
@@ -135,7 +135,7 @@ const Dashboard = () => {
 
     //This months rentals
     const MonthlyRentals = () => {
-        axios.get("https://two024uj.onrender.com/reports/monthly/rentals")
+        axios.get("https://xclusive-service.onrender.com/reports/monthly/rentals")
             .then(res => {
                 if (res.data !== "Error in server") {
                     setMonthlyRentals(res.data)
@@ -146,7 +146,7 @@ const Dashboard = () => {
 
     //Get current overdue vehicles this
     const OverdueCars = () => {
-        axios.get("https://two024uj.onrender.com/reports/month/overdue")
+        axios.get("https://xclusive-service.onrender.com/reports/month/overdue")
             .then(res => {
                 if (res.data !== "Error in server") {
                     setOverdue(res.data)
@@ -156,7 +156,7 @@ const Dashboard = () => {
 
     //Get Most Popular Vehicles
     const TopRentals = () => {
-        axios.get("https://two024uj.onrender.com/reports/top/selling")
+        axios.get("https://xclusive-service.onrender.com/reports/top/selling")
             .then(res => {
                 if (res.data !== "Error in server") {
                     setTopVehicles(res.data)
@@ -167,7 +167,7 @@ const Dashboard = () => {
 
     //Get Frequent Customers
     const FrequentCustomers = () => {
-        axios.get("https://two024uj.onrender.com/reports/frequent/customers")
+        axios.get("https://xclusive-service.onrender.com/reports/frequent/customers")
             .then(res => {
                 if (res.data !== "Error in server") {
                     setFrequent(res.data)
@@ -177,7 +177,7 @@ const Dashboard = () => {
 
     //get popular makes
     const GetMakes = () => {
-        axios.get("https://two024uj.onrender.com/reports/brands")
+        axios.get("https://xclusive-service.onrender.com/reports/brands")
             .then(res => {
                 if (res.data !== "Error in server") {
                     setMakes(res.data)
@@ -187,7 +187,7 @@ const Dashboard = () => {
 
     //get top categories
     const GetCategories = () => {
-        axios.get("https://two024uj.onrender.com/reports/category")
+        axios.get("https://xclusive-service.onrender.com/reports/category")
             .then(res => {
                 if (res.data !== "Error in server") {
 
@@ -529,7 +529,7 @@ const Dashboard = () => {
                                                     {topVehicles.map((car, index) => {
                                                         return (
                                                             <tr key={index}>
-                                                                <th scope="row"><img src={`https://two024uj.onrender.com/vehicles/image/${car.vehicle_id}`} alt="" /></th>
+                                                                <th scope="row"><img src={`https://xclusive-service.onrender.com/vehicles/image/${car.vehicle_id}`} alt="" /></th>
                                                                 <td className="text-primary fw-bold">{car.vehicle_make + " " + car.vehicle_model}</td>
                                                                 <td>{car.vehicle_cost}</td>
                                                                 <td>{car.vehicle_cat}</td>

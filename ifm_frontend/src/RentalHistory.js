@@ -30,7 +30,7 @@ const RentalHistory = () => {
     useEffect(() => {
 
         //Get user info
-        axios.get(`https://two024uj.onrender.com/user/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => {
                 setUser(res.data)
                 if (res.data.user_type === "C") {
@@ -50,7 +50,7 @@ const RentalHistory = () => {
     //Get All Rentals By user
     const GetRentals = () => {
         setIsLoading(true)
-        axios.get(`https://two024uj.onrender.com/booking/history/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/booking/history/${id}`)
             .then(res => {
 
                 if (res.data === "No rentals") {
@@ -89,7 +89,7 @@ const RentalHistory = () => {
             setViewCar(true)
             GetRentals()
         } else {
-            axios.get(`https://two024uj.onrender.com/booking/${id}/${status}`)
+            axios.get(`https://xclusive-service.onrender.com/booking/${id}/${status}`)
                 .then(res => {
                     if (res.data[0].status !== "No rentals found") {
                         setError("")
@@ -293,7 +293,7 @@ const RentalHistory = () => {
 
                                         {car.status}
                                         <div className="product-item" style={{ height: 400 }}>
-                                            <img src={`https://two024uj.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
+                                            <img src={`https://xclusive-service.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
                                             <div style={{ position: "absolute", top: 200 }}>
                                                 <p style={{ color: "#163a7c", fontWeight: "bold" }}>{car.vehicle_year}</p>
                                                 <h3 className="product-title">{car.vehicle_make + " " + car.vehicle_model}</h3>

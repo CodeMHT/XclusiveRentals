@@ -59,7 +59,7 @@ const Rentals = () => {
     useEffect(() => {
 
         //get info about user
-        axios.get(`https://two024uj.onrender.com/user/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => {
                 setUser(res.data)
             }
@@ -75,7 +75,7 @@ const Rentals = () => {
         setIsLoading(true)
 
         let arrCollect = []
-        axios.get("https://two024uj.onrender.com/booking")
+        axios.get("https://xclusive-service.onrender.com/booking")
             .then(res => {
                 let user = res.data
                 if (user === "Error in server" || res.data[0].status === "No rentals found") {
@@ -111,7 +111,7 @@ const Rentals = () => {
     const CheckIn = (event, id, rent) => {
         event.preventDefault()
         //Get old mileage
-        axios.get(`https://two024uj.onrender.com/vehicles/booking/car/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/vehicles/booking/car/${id}`)
             .then(res => {
                 if (res.data !== "Error in server") {
                     setOldMileage(res.data.vehicle_mileage)
@@ -127,7 +127,7 @@ const Rentals = () => {
     const Update = () => {
 
         //update the booking
-        axios.put("https://two024uj.onrender.com/booking", ids)
+        axios.put("https://xclusive-service.onrender.com/booking", ids)
             .then(res => {
                 if (res.data === "Success") {
                     setSuccess("Vehicle checked in successfully")
@@ -150,7 +150,7 @@ const Rentals = () => {
             setError("Mileage can't be less than mileage before rental")
         } else {
             setError("")
-            axios.put("https://two024uj.onrender.com/vehicles", info)
+            axios.put("https://xclusive-service.onrender.com/vehicles", info)
                 .then(res => {
                     if (res.data === "Success") {
                         Update()
@@ -167,7 +167,7 @@ const Rentals = () => {
     const Collection = (event, id) => {
         event.preventDefault()
 
-        axios.put(`https://two024uj.onrender.com/booking/collect/${id}`)
+        axios.put(`https://xclusive-service.onrender.com/booking/collect/${id}`)
             .then(res => {
                 if (res.data === "Success") {
                     alert("Collection Confirmed")
@@ -345,7 +345,7 @@ const Rentals = () => {
                                 return (<div className="col-12 col-md-4 col-lg-3 mb-5" key={index} >
                                     <div className="product-item" style={{ width: 250, height: 450, marginTop: -20 }}>
                                         {car.collected}
-                                        <img src={`https://two024uj.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
+                                        <img src={`https://xclusive-service.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
                                         <h3 className="product-title">{car.vehicle_make + " " + car.vehicle_model}</h3>
                                         <strong className="product-price">Amount:  <span style={{ color: "#163a7c" }}>{"R" + car.income}</span></strong>
                                         <br />

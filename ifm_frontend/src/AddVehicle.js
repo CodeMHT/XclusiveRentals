@@ -89,7 +89,7 @@ const AddVehicle = () => {
     useEffect(() => {
 
         //get info about user
-        axios.get(`https://two024uj.onrender.com/user/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => {
                 setUser(res.data)
             })
@@ -104,7 +104,7 @@ const AddVehicle = () => {
     //Get Vehicle Makes
     const GetMakes = async () => {
 
-        let res = await axios.get('https://two024uj.onrender.com/make')
+        let res = await axios.get('https://xclusive-service.onrender.com/make')
 
         if (res.data !== "Error in server" && res.data[0].status !== "None") {
             setBrands(res.data)
@@ -116,7 +116,7 @@ const AddVehicle = () => {
     //get Vehicle Features
     const GetFeats = async () => {
 
-        let res = await axios.get("https://two024uj.onrender.com/make/features")
+        let res = await axios.get("https://xclusive-service.onrender.com/make/features")
 
         if (res.data !== "Error in server" && res.data[0].status !== "None") {
             setFeats(res.data)
@@ -152,7 +152,7 @@ const AddVehicle = () => {
 
 
             //Send data to api
-            axios.post("https://two024uj.onrender.com/vehicles", form)
+            axios.post("https://xclusive-service.onrender.com/vehicles", form)
                 .then(res => {
                     if (res.data === "Success") {
 
@@ -173,7 +173,7 @@ const AddVehicle = () => {
     const AddMake = async (event) => {
         event.preventDefault()
 
-        let res = await axios.post("https://two024uj.onrender.com/make", { make: make })
+        let res = await axios.post("https://xclusive-service.onrender.com/make", { make: make })
         if (res.data === "Success") {
             setMakeError("")
             setMakeSuccess("Brand Added")
@@ -191,7 +191,7 @@ const AddVehicle = () => {
     const AddFeature = async (event) => {
         event.preventDefault()
 
-        let res = await axios.post("https://two024uj.onrender.com/make/features", { feat: feature })
+        let res = await axios.post("https://xclusive-service.onrender.com/make/features", { feat: feature })
         if (res.data === "Success") {
             setFeatError("")
             setFeatSuccess("Feature Added")

@@ -27,7 +27,7 @@ const Clients = () => {
 
     //get info about user
     const GetUser = () => {
-        axios.get(`https://two024uj.onrender.com/user/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => {
                 setUser(res.data)
             })
@@ -35,7 +35,7 @@ const Clients = () => {
 
     const GetClients = async () => {
 
-        let res = await axios.get('https://two024uj.onrender.com/user/all/users/db')
+        let res = await axios.get('https://xclusive-service.onrender.com/user/all/users/db')
 
         if (res.data !== "Error in server" || res.data !== "Failure") {
             setClients(res.data)
@@ -48,7 +48,7 @@ const Clients = () => {
     const ViewClient = async (event, id) => {
         event.preventDefault()
 
-        let res = await axios.get(`https://two024uj.onrender.com/user/personal/client/${id}`)
+        let res = await axios.get(`https://xclusive-service.onrender.com/user/personal/client/${id}`)
 
 
         if (res.data !== "Error in server" && res.data !== "Failure") {

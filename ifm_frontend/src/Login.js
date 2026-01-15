@@ -22,7 +22,7 @@ const Login = () => {
     const Submit = (event) => {
         event.preventDefault()
 
-        axios.get(`https://two024uj.onrender.com/user/${login.email}/${login.password}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${login.email}/${login.password}`)
             .then(res => {
 
                 if (res.data === "User Not Found") {

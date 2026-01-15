@@ -90,7 +90,7 @@ const Profile = () => {
         if (passwords.pass === passwords.confirm) {
 
             setErrorPass("")
-            axios.post("https://two024uj.onrender.com/user/password", passwords)
+            axios.post("https://xclusive-service.onrender.com/user/password", passwords)
                 .then(res => {
                     if (res.data === "Success") {
                         setSuccessMessage("Password Updated")
@@ -107,7 +107,7 @@ const Profile = () => {
     //Get Image
     const GetImage = () => {
 
-        axios.get(`https://two024uj.onrender.com/user/profile/image/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/profile/image/${id}`)
             .then(res => {
                 if (res.data === "Image Not Found") {
                     setImage(false);
@@ -136,7 +136,7 @@ const Profile = () => {
             }
         }
         if (success) {
-            axios.post("https://two024uj.onrender.com/user/profile/update", edits)
+            axios.post("https://xclusive-service.onrender.com/user/profile/update", edits)
                 .then(res => {
                     if (res.data === "Success") {
                         setSuccessMessage("Updated Successfully")
@@ -157,7 +157,7 @@ const Profile = () => {
     }
     const UpdateStatus = () => {
         //Update vehicles that are booked for today
-        axios.post("https://two024uj.onrender.com/booking/update")
+        axios.post("https://xclusive-service.onrender.com/booking/update")
             .then(res => {
                 if (res.data !== "Success") {
                     alert("Error updating Upcoming Rentals")
@@ -167,7 +167,7 @@ const Profile = () => {
 
     //Handle Vehicles not collected to be cancelled
     const CancelBooking = () => {
-        axios.put('https://two024uj.onrender.com/booking/cancel')
+        axios.put('https://xclusive-service.onrender.com/booking/cancel')
             .then(res => {
                 if (res.data === "Success" || res.data === "None") {
                     //Do Nothing
@@ -185,7 +185,7 @@ const Profile = () => {
         GetImage()
         setIsLoading(true)
         //get info about user
-        axios.get(`https://two024uj.onrender.com/user/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/${id}`)
             .then(res => {
                 setUser(res.data)
 
@@ -216,7 +216,7 @@ const Profile = () => {
     //set Overdue upon login
     const SetOverdue = () => {
 
-        axios.put("https://two024uj.onrender.com/booking/overdue")
+        axios.put("https://xclusive-service.onrender.com/booking/overdue")
             .then(res => {
                 if (res.data === "Success" || res.data === "No pending rentals") {
                     //do nothing
@@ -447,7 +447,7 @@ const Profile = () => {
                             <div className="card">
                                 <div className="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                                    {image && <img src={`https://two024uj.onrender.com/user/profile/image/${id}`} alt="Customer" className="rounded-circle" />}
+                                    {image && <img src={`https://xclusive-service.onrender.com/user/profile/image/${id}`} alt="Customer" className="rounded-circle" />}
                                     {image1 && <img src={profile} alt="Customer" className="rounded-circle" />}
                                     <h2>{user.user_name}</h2>
 

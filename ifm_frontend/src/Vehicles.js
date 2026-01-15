@@ -25,7 +25,7 @@ const Vehicles = () => {
     //Get Vehicle Makes
     const GetBrands = async () => {
 
-        let res = await axios.get('https://two024uj.onrender.com/make')
+        let res = await axios.get('https://xclusive-service.onrender.com/make')
 
         if (res.data !== "Error in server" && res.data[0].status !== "None") {
             setBrands(res.data)
@@ -37,7 +37,7 @@ const Vehicles = () => {
     useEffect(() => {
 
         //Get user info
-        axios.get(`https://two024uj.onrender.com/user/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => setUser(res.data))
 
         //Get Vehicle Info
@@ -56,7 +56,7 @@ const Vehicles = () => {
         //array to hold the true and false for a vehicle needing service
         let serviceArray = []
 
-        axios.get("https://two024uj.onrender.com/vehicles")
+        axios.get("https://xclusive-service.onrender.com/vehicles")
             .then(res => {
                 let data = res.data
                 for (let i = 0; i < data.length; i++) {
@@ -118,7 +118,7 @@ const Vehicles = () => {
 
         let serviceArray = []
 
-        axios.post("https://two024uj.onrender.com/vehicles/search", car)
+        axios.post("https://xclusive-service.onrender.com/vehicles/search", car)
             .then(res => {
                 if (res.data !== "Error in server" && res.data[0].status !== "None") {
                     let data = res.data
@@ -164,7 +164,7 @@ const Vehicles = () => {
     const ServiceVehicle = (event, id, mileage) => {
         event.preventDefault()
 
-        axios.get(`https://two024uj.onrender.com/service/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/service/${id}`)
             .then(res => {
                 if (res.data === "Unavailable") {
                     alert("This vehicle is currently out on rental")
@@ -193,7 +193,7 @@ const Vehicles = () => {
                     details = { service_date: today, service_interval: interval, vehicle_id: id } //add data to the service details
 
                     //Post Info to database
-                    axios.post("https://two024uj.onrender.com/service", details)
+                    axios.post("https://xclusive-service.onrender.com/service", details)
                         .then(res1 => {
                             if (res1.data === "Success") {
                                 // change the status of the vehicle
@@ -218,7 +218,7 @@ const Vehicles = () => {
     //Delete Vehicle
     const Remove = (event, id) => {
         event.preventDefault()
-        axios.delete(`https://two024uj.onrender.com/vehicles/${id}`)
+        axios.delete(`https://xclusive-service.onrender.com/vehicles/${id}`)
             .then(res => {
                 if (res.data === "Success") {
                     alert("Successfully deleted vehicle")
@@ -370,7 +370,7 @@ const Vehicles = () => {
                                         <div className="product-item" style={{ height: 450, marginTop: -20 }} >
                                             <div className="top-right">{car.isnew}</div>
                                             <div className="top-left">{car.service}</div>
-                                            <img src={`https://two024uj.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
+                                            <img src={`https://xclusive-service.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
 
                                             {/**From here fix positioning */}
                                             <div style={{ position: "absolute", top: 200 }}>

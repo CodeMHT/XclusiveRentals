@@ -46,7 +46,7 @@ const ClientCars = () => {
         window.scrollTo(0, 0)
         setIsLoading(true)
         //Get All Vehicles
-        axios.get("https://two024uj.onrender.com/vehicles")
+        axios.get("https://xclusive-service.onrender.com/vehicles")
             .then(res => {
                 setCars(res.data)
 
@@ -79,7 +79,7 @@ const ClientCars = () => {
     const AllCars = (event) => {
         event.preventDefault()
         setIsLoading(true)
-        axios.get("https://two024uj.onrender.com/vehicles")
+        axios.get("https://xclusive-service.onrender.com/vehicles")
             .then(res => {
                 //Change the index
                 setCars(res.data)
@@ -108,7 +108,7 @@ const ClientCars = () => {
     //Get Vehicle Makes
     const GetBrands = async () => {
 
-        let res = await axios.get('https://two024uj.onrender.com/make')
+        let res = await axios.get('https://xclusive-service.onrender.com/make')
 
         if (res.data !== "Error in server" && res.data[0].status !== "None") {
             setBrands(res.data)
@@ -120,7 +120,7 @@ const ClientCars = () => {
     //Get Vehicle Features
     const GetFeats = async () => {
 
-        let res = await axios.get('https://two024uj.onrender.com/make/features')
+        let res = await axios.get('https://xclusive-service.onrender.com/make/features')
 
         if (res.data !== "Error in server" && res.data[0].status !== "None") {
             setFeatures(res.data)
@@ -153,7 +153,7 @@ const ClientCars = () => {
         } else {
             setError("")
             //Get vehicles based on user selection
-            axios.post("https://two024uj.onrender.com/vehicles/search", search)
+            axios.post("https://xclusive-service.onrender.com/vehicles/search", search)
                 .then(res => {
                     if (res.data[0].status === "None" || res.data === "Error in server") {
                         setError("No vehicles found matching search")
@@ -313,7 +313,7 @@ const ClientCars = () => {
                         {!isLoading && carPage.map((car, index) => {
                             return (<div className="col-12 col-md-4 col-lg-3 mb-5" style={{ paddingRight: 20 }} key={index}>
                                 <Link className="product-item" to="/bookings" state={{ id: car.vehicle_id }} style={{ width: 250, height: 350, marginTop: -20 }}>
-                                    <img src={`https://two024uj.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
+                                    <img src={`https://xclusive-service.onrender.com/vehicles/image/${car.vehicle_id}`} alt="car here" className="img-dimensions img-fluid product-thumbnail" />
                                     <div style={{ position: "absolute", bottom: 30, left: 50 }}>
                                         <p>{car.vehicle_year}</p>
                                         <h3 className="product-title">{car.vehicle_make + " " + car.vehicle_model}</h3>

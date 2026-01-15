@@ -59,7 +59,7 @@ const Booking = () => {
         event.preventDefault()
 
         //first confirm user is an actual customer
-        axios.get(`https://two024uj.onrender.com/user/${booking.customer_id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${booking.customer_id}`)
             .then(res => {
                 if (res.data === "Error getting profile" || res.data === "User Not Found") {
                     alert("This user does not exist. Please create and account before making a booking")
@@ -135,7 +135,7 @@ const Booking = () => {
     const Book = () => {
         //send booking info to database
 
-        axios.post("https://two024uj.onrender.com/booking", booking)
+        axios.post("https://xclusive-service.onrender.com/booking", booking)
             .then(res => {
                 if (res.data === "Success") {
                     Open()  //open the modal
@@ -148,7 +148,7 @@ const Booking = () => {
 
     //Get all the days that the vehicle is booked on
     const GetBookingInfo = () => {
-        axios.get(`https://two024uj.onrender.com/booking/dates/${params.id}`)
+        axios.get(`https://xclusive-service.onrender.com/booking/dates/${params.id}`)
             .then(res => {
                 let returndays = res.data
                 //give return days a 5 day buffer to cater for service days or overdue days
@@ -176,7 +176,7 @@ const Booking = () => {
         setIsLoading(true)
 
         //Get Vehicle Detail
-        axios.get(`https://two024uj.onrender.com/vehicles/booking/car/${params.id}`)
+        axios.get(`https://xclusive-service.onrender.com/vehicles/booking/car/${params.id}`)
             .then(res => {
 
                 if (res.data === "Failure" || res.data === "Error in server") {
@@ -278,7 +278,7 @@ const Booking = () => {
                     <div className="row justify-content-between">
                         <div className="col-lg-7 mb-5 mb-lg-0">
                             <div className="imgs-grid">
-                                <div className="grid grid-1"><img src={`https://two024uj.onrender.com/vehicles/image/${car.vehicle_id}`} alt="Untree.co" /></div>
+                                <div className="grid grid-1"><img src={`https://xclusive-service.onrender.com/vehicles/image/${car.vehicle_id}`} alt="Untree.co" /></div>
 
                             </div>
                         </div>

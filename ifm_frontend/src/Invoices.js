@@ -54,7 +54,7 @@ const Invoices = () => {
         setIsLoading(true)
         let isOwed = []  //stores whether each invoice has been paid or not
 
-        axios.get(`https://two024uj.onrender.com/reports/invoices/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/reports/invoices/${id}`)
             .then(res => {
                 if (res.data === "Error in server" || res.data[0].status === "None") {
                     setViewInvoice(false)
@@ -87,7 +87,7 @@ const Invoices = () => {
     const Pay = (event, id) => {
         event.preventDefault()
 
-        axios.put(`https://two024uj.onrender.com/reports`, { rent_id: id })
+        axios.put(`https://xclusive-service.onrender.com/reports`, { rent_id: id })
             .then(res => {
                 if (res.data === "Success") {
                     alert("Invoice #" + id + " has been succesfully paid")
@@ -102,7 +102,7 @@ const Invoices = () => {
         //get User
 
 
-        axios.get(`https://two024uj.onrender.com/user/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => {
                 setUser(res.data)
                 if (res.data.user_type === "C") {

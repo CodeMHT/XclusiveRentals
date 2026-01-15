@@ -51,7 +51,7 @@ const SignUp = () => {
             if (regex.test(details.user_pass)) {
                 //Sign Up User
 
-                axios.post(`https://two024uj.onrender.com/user`, form)
+                axios.post(`https://xclusive-service.onrender.com/user`, form)
                     .then(res => {
                         if (res.data === "Success") {
                             alert("Successfully Signed Up")
