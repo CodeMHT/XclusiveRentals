@@ -79,6 +79,7 @@ route.get("/:email/:pass", (req, res) => {
 ///get info about user
 route.get("/:id", (req, res) => {
     let id = req.params.id
+
     client.query("Select user_name, user_phone, user_email, user_type, user_address, user_code, user_pass,customer_id,lcode,lnumber from ifm_users where customer_id = $1", [id], (err, result) => {
         if (err) {
             res.send("Error getting profile")
