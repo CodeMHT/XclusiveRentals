@@ -185,10 +185,10 @@ const Profile = () => {
         GetImage()
         setIsLoading(true)
         //get info about user
-        axios.get(`https://xclusive-service.onrender.com/${id}`)
+        axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => {
                 setUser(res.data)
-
+                console.log(res.data)
                 if (res.data.user_type === "C") {
 
                     setType("Client")
@@ -201,7 +201,6 @@ const Profile = () => {
                     setView(true)
                 }
 
-                setIsLoading(false)
             }
 
             )
