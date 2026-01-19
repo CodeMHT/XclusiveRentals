@@ -19,7 +19,6 @@ import RentalHistory from "./RentalHistory";
 import Booking from "./Booking";
 import Rentals from "./Rentals";
 import Invoices from "./Invoices";
-import Service from "./Service";
 import Clients from "./Clients";
 
 function App() {
@@ -39,7 +38,6 @@ function App() {
                 <Route path="/bookings" element={<Booking />} />
                 <Route path="/rentals" element={<Rentals />} />
                 <Route path="/invoices" element={<Invoices />} />
-                <Route path="/service" element={<Service />} />
                 <Route path="clients" element={<Clients />} />
             </Routes>
         </BrowserRouter>

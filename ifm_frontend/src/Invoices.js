@@ -239,13 +239,6 @@ const Invoices = () => {
                     </li>}
                     {/**End Vehicle Page Nav*/}
 
-                    {view && <li className="nav-item">
-                        <a className="nav-link collapsed" href="/service">
-                            <i className="bi bi-question-circle"></i>
-                            <span>Under Service</span>
-                        </a>
-                    </li>}{/**End Service Nav --> */}
-
                     <li className="nav-heading">Users</li>
 
                     {view && <li className="nav-item">

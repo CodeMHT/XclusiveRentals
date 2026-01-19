@@ -188,7 +188,6 @@ const Profile = () => {
         axios.get(`https://xclusive-service.onrender.com/user/${id}`)
             .then(res => {
                 setUser(res.data)
-                console.log(res.data)
                 if (res.data.user_type === "C") {
 
                     setType("Client")
@@ -208,8 +207,10 @@ const Profile = () => {
         SetOverdue()  //Update overdue vehicles accordingly
         UpdateStatus()  //Update vehicles meant booked for today
         CancelBooking()
+        setIsLoading(false)
+
         // eslint-disable-next-line
-    }, [successMessage])
+    }, [user.customer_id])
 
 
     //set Overdue upon login
@@ -391,13 +392,6 @@ const Profile = () => {
                         </a>
                     </li>)}
                     {/**End Vehicle Page Nav*/}
-
-                    {view && <li className="nav-item">
-                        <a className="nav-link collapsed" href="/service">
-                            <i className="bi bi-question-circle"></i>
-                            <span>Under Service</span>
-                        </a>
-                    </li>}{/**End Service Nav --> */}
 
                     <li className="nav-heading">Users</li>
 

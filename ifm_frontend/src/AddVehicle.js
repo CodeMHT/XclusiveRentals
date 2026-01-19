@@ -328,21 +328,15 @@ const AddVehicle = () => {
                     </li>
                     {/**End Vehicle Page Nav*/}
 
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="/service">
-                            <i className="bi bi-question-circle"></i>
-                            <span>Under Service</span>
-                        </a>
-                    </li>{/**End Service Nav --> */}
-
                     <li className="nav-heading">Users</li>
 
                     <li className="nav-item">
                         <a className="nav-link collapsed" href="/clients">
                             <i className="bi bi-person"></i>
-                            <span>Customers</span>
+                            <span>Clients</span>
                         </a>
-                    </li>{/**End Profile Page Nav*/}
+                    </li>{/**End Clients Page Nav*/}
+
 
                     <li className="nav-item">
                         <a className="nav-link collapsed" href="/profile">
@@ -351,12 +345,7 @@ const AddVehicle = () => {
                         </a>
                     </li>{/**End Profile Page Nav*/}
 
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="/clients">
-                            <i className="bi bi-person"></i>
-                            <span>Clients</span>
-                        </a>
-                    </li>{/**End Customers Page Nav*/}
+
 
                     <li className="nav-item">
                         <a className="nav-link collapsed" href="/">

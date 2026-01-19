@@ -284,13 +284,6 @@ const Rentals = () => {
                     </li>
                     {/**End Vehicle Page Nav*/}
 
-                    <li className="nav-item">
-                        <a className="nav-link collapsed" href="/service">
-                            <i className="bi bi-question-circle"></i>
-                            <span>Under Service</span>
-                        </a>
-                    </li>{/**End Service Nav --> */}
-
                     <li className="nav-heading">Users</li>
 
                     <li className="nav-item">
